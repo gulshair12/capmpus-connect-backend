@@ -34,18 +34,6 @@ const userSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Graduation year is required"],
     },
-    bio: {
-      type: String,
-      default: "",
-    },
-    profilePicture: {
-      type: String,
-      default: "",
-    },
-    interests: {
-      type: [String],
-      default: [],
-    },
     friends: [
       {
         type: mongoose.Schema.Types.ObjectId,

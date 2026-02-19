@@ -17,9 +17,6 @@ export const register = async (req, res, next) => {
       university,
       department,
       graduationYear,
-      bio,
-      profilePicture,
-      interests,
     } = req.body;
 
     if (
@@ -53,9 +50,6 @@ export const register = async (req, res, next) => {
       university,
       department,
       graduationYear,
-      bio: bio || "",
-      profilePicture: profilePicture || "",
-      interests: interests || [],
     });
 
     const token = generateToken(user._id);
@@ -71,9 +65,6 @@ export const register = async (req, res, next) => {
         university: user.university,
         department: user.department,
         graduationYear: user.graduationYear,
-        bio: user.bio,
-        profilePicture: user.profilePicture,
-        interests: user.interests,
       },
     });
   } catch (err) {
@@ -118,9 +109,6 @@ export const login = async (req, res, next) => {
         university: user.university,
         department: user.department,
         graduationYear: user.graduationYear,
-        bio: user.bio,
-        profilePicture: user.profilePicture,
-        interests: user.interests,
       },
     });
   } catch (err) {
