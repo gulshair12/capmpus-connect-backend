@@ -7,6 +7,8 @@ import { errorHandler } from "./middleware/errorHandler.js";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import eventRoutes from "./routes/event.routes.js";
+import resourceRoutes from "./routes/resource.routes.js";
 import dns from "node:dns";
 
 // Force public DNS servers (Google 8.8.8.8, Cloudflare 1.1.1.1)
@@ -33,6 +35,8 @@ app.use(morgan("dev"));
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/upload", uploadRoutes);
+app.use("/api/events", eventRoutes);
+app.use("/api/resources", resourceRoutes);
 
 // Health check
 app.get("/health", (req, res) => {

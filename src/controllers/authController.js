@@ -62,6 +62,7 @@ export const register = async (req, res, next) => {
         id: user._id,
         fullName: user.fullName,
         email: user.email,
+        role: user.role,
         university: user.university,
         department: user.department,
         graduationYear: user.graduationYear,
@@ -106,9 +107,7 @@ export const login = async (req, res, next) => {
         id: user._id,
         fullName: user.fullName,
         email: user.email,
-        university: user.university,
-        department: user.department,
-        graduationYear: user.graduationYear,
+        role: user.role,
       },
     });
   } catch (err) {

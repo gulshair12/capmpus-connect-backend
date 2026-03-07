@@ -20,6 +20,8 @@ const userSchema = new mongoose.Schema(
       select: false,
       minlength: 6,
     },
+
+    
     university: {
       type: String,
       required: [true, "University is required"],
@@ -33,6 +35,11 @@ const userSchema = new mongoose.Schema(
     graduationYear: {
       type: Number,
       required: [true, "Graduation year is required"],
+    },
+    role: {
+      type: String,
+      enum: ["student", "admin"],
+      default: "student",
     },
     friends: [
       {
